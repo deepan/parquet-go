@@ -47,8 +47,8 @@ func PagesToChunk(pages []*Page) *Chunk {
 	chunk.ChunkHeader = parquet.NewColumnChunk()
 	metaData := parquet.NewColumnMetaData()
 	metaData.Type = *pages[0].Schema.Type
-	metaData.Encodings = append(metaData.Encodings, parquet.Encoding_RLE)
-	metaData.Encodings = append(metaData.Encodings, parquet.Encoding_BIT_PACKED)
+	// metaData.Encodings = append(metaData.Encodings, parquet.Encoding_RLE)
+	// metaData.Encodings = append(metaData.Encodings, parquet.Encoding_BIT_PACKED)
 	metaData.Encodings = append(metaData.Encodings, parquet.Encoding_PLAIN)
 	//metaData.Encodings = append(metaData.Encodings, parquet.Encoding_DELTA_BINARY_PACKED)
 	metaData.Codec = pages[0].CompressType
